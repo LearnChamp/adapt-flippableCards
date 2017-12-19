@@ -1,20 +1,20 @@
 {
-  "name": "adapt-flippableCard",
-  "description": "A set of Cards. Each card can be flipped to show more content on it's backface.",
-  "version": "1.0.0",
-  "framework": "^2.1.0",
-  "displayName": "Flippable Cards",
-  "component": "flippableCard",
-  "main": "/js/adapt-flippableCard.js",
-  "homepage": "https://github.com/LearnChamp/adapt-flippableCards",
-  "repository": "https://github.com/LearnChamp/adapt-flippableCards.git",
-  "issues": "",
-  "keywords": [
-    "adapt-plugin",
-    "adapt-component"
-  ],
-  "license": "",
-  "authors": [
-    ""
-  ]
+    "name": "adapt-flippableCard",
+    "repository": "git://github.com/LearnChamp/adapt-flippableCards",
+    "framework": "^2.1.0",
+    "description": "A set of Cards. Each card can be flipped to show more content on it's backface.",
+    "version": "1.0.0",
+    "displayName": "Flippable Cards",
+    "component": "flippableCard",
+    "main": "/js/adapt-flippableCard.js",
+    "homepage": "https://github.com/LearnChamp/adapt-flippableCards",
+    "issues": "",
+    "keywords": [
+        "adapt-plugin",
+        "adapt-component"
+    ],
+    "license": "",
+    "authors": [
+        ""
+    ]
 }
