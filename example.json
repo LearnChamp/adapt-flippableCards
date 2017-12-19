@@ -1,0 +1,48 @@
+{
+    "_id": "c-10",
+    "_parentId": "b-10",
+    "_type": "component",
+    "_component": "flippableCard",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Component title",
+    "displayTitle": "",
+    "body": "",
+    "instruction": "",
+    "_columns": {
+        "_large": 3,
+        "_medium": 2,
+        "_small": 1
+    },
+    "_width": 500,
+    "_height": 400,
+    "_items": [
+        {
+            "title": "Item 1",
+            "body": "Deserunt non reprehenderit reprehenderit sint ad dolor in duis ex et fugiat.",
+            "moreButton": "show more",
+            "_graphic": {
+                "_src": "course/en/images/500x400.jpg",
+                "alt": "alt"
+            }
+        },
+        {
+            "title": "Item 2",
+            "body": "Ad duis laboris esse exercitation ad amet.",
+            "moreButton": "show more",
+            "_graphic": {
+                "_src": "course/en/images/500x400.jpg",
+                "alt": "alt"
+            }
+        },
+        {
+            "title": "Item 3",
+            "body": "Cillum adipisicing fugiat Lorem est ullamco tempor deserunt minim commodo est commodo voluptate exercitation. Duis culpa elit do sit do elit eiusmod amet enim et aliqua culpa cupidatat adipisicing. Ex culpa incididunt do fugiat tempor occaecat mollit. Cupidatat adipisicing et incididunt pariatur adipisicing anim sunt. Occaecat minim consequat ea dolore enim ex voluptate proident exercitation. Et do adipisicing ut nisi excepteur id aliqua ex deserunt. Sit reprehenderit dolor fugiat eu irure.",
+            "moreButton": "show more",
+            "_graphic": {
+                "_src": "course/en/images/500x400.jpg",
+                "alt": "alt"
+            }
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+<div class="flippablecard-inner component-inner" role="region" aria-label="{{_globals._components._flippableCard.ariaRegion}}">
+    {{> component this}}
+    <div class="flippablecard-widget component-widget">
+        <div class="card-container clearfix">
+            {{#each _items}}
+                <div class="holder item-{{@index}}">
+                    <div class="spacer" style="padding-top:{{../_ratio}}%">
+                        <div class="card {{#if _isVisited}}visited{{/if}} " data-item="{{@index}}">
+                            <div class="card-content">
+                                <div class="front">
+                                    <img src="{{_graphic._src}}" alt="{{_graphic.alt}}" tabindex="0">
+                                </div>
+                                <div class="back">
+                                    <div class="back-inner">
+                                        {{#if title}}
+                                            <div class="title">
+                                                <div class="title-inner" tabindex="-1" aria-hidden="true">
+                                                    {{{title}}}
+                                                </div>
+                                            </div>
+                                        {{/if}}
+                                        <div class="body">
+                                            <div class="body-inner" tabindex="-1" aria-hidden="true">
+                                                {{{body}}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="show-more">
+                                        <div class="fade"></div>
+                                        <button class="show-more-btn" tabindex="-1" aria-hidden="true" aria-label="{{../_globals._components._flippableCard.ariaLabel}}" data-item="{{@index}}">{{moreButton}}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

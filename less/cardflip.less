@@ -1,0 +1,120 @@
+// see http://jsfiddle.net/Tinclon/2ega7yLt/7/
+
+.card {
+    
+    perspective: 1000px;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	-o-perspective: 1000px;
+	-ms-perspective: 1000px;
+	
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-content {
+
+        transition: 0.5s ease-out;
+        -webkit-transition: 0.5s ease-out;
+        -moz-transition: 0.5s ease-out;
+        -o-transition: 0.5s ease-out;
+        -ms-transition: 0.5s ease-out;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+
+        background-color: white;
+
+        /* content backface is visible so that static content still appears */
+        backface-visibility: visible;
+        -webkit-backface-visibility: visible;
+        -moz-backface-visibility: visible;
+        -o-backface-visibility: visible;
+        -ms-backface-visibility: visible;
+
+        position:relative;
+        width: 100%;
+        height: 100%;
+
+        .front,
+        .back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            -ms-backface-visibility: visible;
+            position: absolute;
+            
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+.card.applyflip .card-content {
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+}
+
+.card .card-content .front,
+.card.applyflip .card-content .front {
+	transform: rotateY(0deg);
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	-o-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+}
+
+.card .card-content .back,
+.card.applyflip .card-content .back {
+	transform: rotateY(-180deg);
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	-o-transform: rotateY(-180deg);
+	-ms-transform: rotateY(-180deg);
+}
+
+.card .card-content .front,
+.card.applyflip .card-content .back {
+	/* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
+	animation: stayvisible 0.5s both;
+	-webkit-animation: stayvisible 0.5s both;
+	-moz-animation: stayvisible 0.5s both;
+	-o-animation: stayvisible 0.5s both;
+	-ms-animation: donothing 0.5s;
+	-ms-transition: visibility 0s linear 0.17s;
+	visibility: visible;
+}
+
+// make sure all faces are hidden when visibility-hidden is set on parent
+.visibility-hidden .card .card-content .front,
+.visibility-hidden .card .card-content .front img,
+.visibility-hidden .card.applyflip .card-content .back {
+    visibility: hidden;
+}
+
+.card.applyflip .card-content .front,
+.card .card-content .back {
+	/* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
+	animation: stayvisible 0.5s both;
+	-webkit-animation: stayvisible 0.5s both;
+	-moz-animation: stayvisible 0.5s both;
+	-o-animation: stayvisible 0.5s both;
+	-ms-animation: donothing 0.5s;
+	-ms-transition: visibility 0s linear 0.17s;
+	visibility: hidden;
+}
+
+@keyframes stayvisible { from { visibility: visible; } to { visibility: visible; } }
+@-webkit-keyframes stayvisible { from { visibility: visible; } to { visibility: visible; } }
+@-moz-keyframes stayvisible { from { visibility: visible; } to { visibility: visible; } }
+@-o-keyframes stayvisible { from { visibility: visible; } to { visibility: visible; } }
+@-ms-keyframes donothing { 0% { } 100% { } }

@@ -1,0 +1,159 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Interactive Cards with two faces. Front Face contains an image the back-face additional content. Click the more mottun to view extra content.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "ariaLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Show more content",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "help": "This is the instruction text"
+    },
+    "_columns": {
+      "type": "object",
+      "required": true,
+      "title": "Column Options",
+      "properties": {
+        "_large": {
+          "type": "number",
+          "required": true,
+          "inputType": "Number",
+          "title": "Large",
+          "default": "4",
+          "validators": ["required"],
+          "help": "Number of Cards displayed in a row - Large Screen"
+        },
+        "_medium": {
+          "type": "number",
+          "required": true,
+          "inputType": "Number",
+          "title": "Medium",
+          "default": "3",
+          "validators": ["required"],
+          "help": "Number of Cards displayed in a row - Medium Screen"
+        },
+        "_small": {
+          "type": "number",
+          "required": true,
+          "inputType": "Number",
+          "title": "Small",
+          "default": "1",
+          "validators": ["required"],
+          "help": "Number of Cards displayed in a row - Small Screen"
+        }
+      }
+    },
+    "_width": {
+      "type": "number",
+      "required": true,
+      "inputType": "Number",
+      "title": "Width",
+      "default": "",
+      "validators": ["required"],
+      "help": "Width of the Cards"
+    },
+    "_height": {
+      "type": "number",
+      "required": true,
+      "inputType": "Number",
+      "title": "Height",
+      "default": "",
+      "validators": ["required"],
+      "help": "Height of the Cards"
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Items",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "title": {
+            "type": "string",
+            "required": false,
+            "inputType": "Text",
+            "title": "Item Title",
+            "default": "",
+            "validators": [],
+            "help": "Item title text",
+            "translatable": true
+          },
+          "body": {
+            "type": "string",
+            "required": true,
+            "inputType": "TextArea",
+            "title": "Item Body",
+            "default": "",
+            "validators": ["required"],
+            "help": "Item body text",
+            "translatable": true
+          },
+          "moreButton": {
+            "type": "string",
+            "required": true,
+            "inputType": "Text",
+            "title": "More button text",
+            "default": "",
+            "validators": ["required"],
+            "help": "Button text that reveals the text of the item",
+            "translatable": true
+          },
+          "_graphic": {
+            "type": "object",
+            "required": true,
+            "properties": {
+              "alt": {
+                "type": "string",
+                "required": false,
+                "inputType": "Text",
+                "title": "Alternative text",
+                "default": "",
+                "validators": [],
+                "help": "The alternative text for this image",
+                "translatable": true
+              },
+              "_src": {
+                "type": "string",
+                "required": true,
+                "default": "",
+                "inputType": "Asset:image",
+                "title": "Graphic",
+                "validators": ["required"],
+                "help": "Image for this Card displayed on the front face"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
