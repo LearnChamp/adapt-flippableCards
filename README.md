@@ -3,6 +3,7 @@ This component displays a set of cards that can be flipped to show the backface.
 
 To improve the experience on mobile devices, course creators can specify the number of columns used to display the cards for each individual device size. Also, overlapping Text is displayed in the Notify plugin.
 
+![FlippableCard](https://github.com/LearnChamp/sharedAssets/blob/master/assets/adapt-flippableCard.gif?raw=true)    
 
 ## Installation
 To install the component with the [Adapt CLI](https://github.com/adaptlearning/adapt-cli), run the following from the command line:  
