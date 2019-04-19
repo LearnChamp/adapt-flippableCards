@@ -62,15 +62,13 @@ define([
 		},
 
 		ctrlFocus: function(index) {
-			var item = this.model.getItem(index);
+			var item = this.model.getItem(index),
+				card = this.$cards.eq(index);
 			if (item._isActive) {
-				this.$cards.eq(index).find('.title-inner').a11y_cntrl(!item._isOverlapping);
-				this.$cards.eq(index).find('.body-inner').a11y_cntrl(!item._isOverlapping);
-				this.$cards.eq(index).find('.show-more-btn').a11y_cntrl(item._isOverlapping);
+				card.find('.title-inner, .body-inner').a11y_cntrl(!item._isOverlapping);
+				card.find('.show-more-btn').a11y_cntrl(item._isOverlapping);
 			} else {
-				this.$cards.eq(index).find('.title-inner').a11y_cntrl(false);
-				this.$cards.eq(index).find('.body-inner').a11y_cntrl(false);
-				this.$cards.eq(index).find('.show-more-btn').a11y_cntrl(false);
+				card.find('.title-inner, .body-inner, .show-more-btn').a11y_cntrl(false);
 			}
 		},
 
